@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صالون منطقة الجمال | Beauty Zone</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-beige: #F9F6F0;
+            --card-beige: #F1ECE1;
+            --accent-beige: #E6DCCB;
+            --text-dark: #1A1A1A;
+            --black-pure: #0D0D0D;
+            --gold-subtle: #C5A059;
+            --autumn-orange: #D97736;
+            --autumn-light: #F4E8DF;
+            --autumn-glow: rgba(217, 119, 54, 0.25);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-beige);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Corner WhatsApp Badge */
+        .fixed-whatsapp-corner {
+            position: fixed;
+            top: 90px;
+            left: 20px;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(249, 246, 240, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px 6px 6px;
+            border-radius: 50px;
+            border: 2px solid var(--autumn-orange);
+            box-shadow: 0 4px 15px var(--autumn-glow);
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .fixed-whatsapp-corner:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 20px rgba(217, 119, 54, 0.4);
+            border-color: #E08546;
+        }
+
+        .fixed-whatsapp-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: var(--autumn-orange);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .fixed-whatsapp-text {
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--black-pure);
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: rgba(249, 246, 240, 0.95);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--accent-beige);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--autumn-orange);
+        }
+
+        /* Circular Links Container */
+        .social-nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-circle-item {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            color: var(--black-pure);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+            border: 2px solid var(--autumn-orange);
+            box-shadow: 0 3px 10px var(--autumn-glow);
+            position: relative;
+        }
+
+        .social-circle-item:hover {
+            background-color: var(--autumn-orange);
+            color: #FFFFFF;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 16px rgba(217, 119, 54, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            padding-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 8%;
+            padding-right: 8%;
+            background: linear-gradient(135deg, var(--bg-beige) 60%, var(--card-beige) 100%);
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--autumn-orange);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--black-pure);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #4A4A4A;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--black-pure);
+            color: var(--bg-beige);
+            padding: 14px 34px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 2px solid var(--autumn-orange);
+            box-shadow: 0 4px 12px var(--autumn-glow);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--autumn-orange);
+            color: #FFFFFF;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            max-width: 450px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 8px solid #FFFFFF;
+        }
+
+        /* Section Padding & Headings */
+        .section-padding {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--black-pure);
+            font-weight: 800;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* Price List Section */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            background-color: #FFFFFF;
+            border: 1.5px solid var(--accent-beige);
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--autumn-orange);
+            color: #FFFFFF;
+            border-color: var(--autumn-orange);
+            box-shadow: 0 4px 12px var(--autumn-glow);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .price-card {
+            background-color: #FFFFFF;
+            padding: 20px 25px;
+            border-radius: 14px;
+            border: 1px solid var(--accent-beige);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .price-card:hover {
+            border-color: var(--autumn-orange);
+            box-shadow: 0 8px 20px var(--autumn-glow);
+        }
+
+        .price-info h4 {
+            font-size: 1.05rem;
+            color: var(--black-pure);
+            font-weight: 700;
+        }
+
+        .price-info p {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 3px;
+        }
+
+        .price-tag {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--autumn-orange);
+            white-space: nowrap;
+        }
+
+        .price-tag span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #666;
+        }
+
+        /* Brides Packages */
+        .bride-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .bride-card {
+            background: linear-gradient(145deg, #FFFFFF, var(--card-beige));
+            border: 2px solid var(--autumn-orange);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 25px var(--autumn-glow);
+        }
+
+        .bride-header {
+            text-align: center;
+            border-bottom: 1px dashed var(--autumn-orange);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .bride-header h3 {
+            font-size: 1.4rem;
+            color: var(--black-pure);
+        }
+
+        .bride-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--autumn-orange);
+            margin-top: 5px;
+        }
+
+        .bride-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bride-list li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bride-list li i {
+            color: var(--autumn-orange);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 280px;
+            border: 2px solid var(--autumn-light);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            border-color: var(--autumn-orange);
+            transform: translateY(-4px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Request Form Section */
+        .booking-container {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid var(--autumn-orange);
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px var(--autumn-glow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--black-pure);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--accent-beige);
+            background-color: var(--bg-beige);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--autumn-orange);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 3px var(--autumn-glow);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--autumn-orange);
+            color: #FFFFFF;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px var(--autumn-glow);
+        }
+
+        .btn-submit:hover {
+            background-color: #C26325;
+            transform: translateY(-2px);
+        }
+
+        /* Location & Contact Section */
+        .contact-card {
+            background-color: var(--card-beige);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            border: 1px solid var(--accent-beige);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--black-pure);
+        }
+
+        .btn-location {
+            background-color: var(--black-pure);
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--autumn-orange);
+        }
+
+        .btn-location:hover {
+            background-color: var(--autumn-orange);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black-pure);
+            color: var(--bg-beige);
+            padding: 40px 8% 20px;
+            text-align: center;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-content {
+                margin-bottom: 40px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+            .fixed-whatsapp-corner {
+                top: auto;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Corner WhatsApp Direct Badge -->
+    <a href="https://wa.me/966539009188" target="_blank" class="fixed-whatsapp-corner" title="تواصل مباشر عبر الواتساب">
+        <div class="fixed-whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <span class="fixed-whatsapp-text">الواتساب المباشر</span>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo-container">
+            <svg width="40" height="40" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <path d="M 30,20 Q 55,10 70,30 Q 80,45 65,60 Q 45,75 25,85" fill="none" stroke="#D97736" stroke-width="4"/>
+                <path d="M 40,38 C 50,30 65,35 60,50 C 55,65 42,65 48,78" fill="none" stroke="#0D0D0D" stroke-width="3"/>
+                <circle cx="73" cy="28" r="4" fill="#D97736"/>
+            </svg>
+            <span class="logo-text">Beauty Zone | منطقة الجمال</span>
+        </a>
+
+        <nav>
+            <a href="#services-prices">الخدمات والأسعار</a>
+            <a href="#brides">بكجات العرايس</a>
+            <a href="#gallery">الأعمال الحصرية</a>
+            <a href="#booking">طلب الخدمة</a>
+            <a href="#location">الموقع</a>
+        </nav>
+
+        <!-- Circular Links with Autumn Orange Borders -->
+        <div class="social-nav">
+            <a href="https://www.instagram.com/beauty_zo0ne?psln=M3YybDRrYzdlcW15&utm_source=qr" target="_blank" class="social-circle-item" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@beauty_zo0ne?_r=1&_t=ZS-9B6Q64Ap00C" target="_blank" class="social-circle-item" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://snapchat.com/t/YSso1C4g" target="_blank" class="social-circle-item" title="Snapchat"><i class="fab fa-snapchat"></i></a>
+            <a href="https://maps.app.goo.gl/FtDy2GXhgdoUxfrD9?g_st=ic" target="_blank" class="social-circle-item" title="Location"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">WELCOME TO BEAUTY ZONE</div>
+            <h1 class="hero-title">إطلالتك الأنيقة تبدأ من صالون منطقة الجمال</h1>
+            <p class="hero-desc">نقدم لكِ أرقى خدمات العناية بالبشرة، الميك أب الاحترافي، بديكير ومانيكير، صبغات وتصفيف الشعر بأعلى معايير الفخامة.</p>
+            <a href="#booking" class="btn-primary">للتواصل وطلب الخدمة</a>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Beauty Zone Salon" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section class="section-padding" id="services-prices">
+        <div class="section-title">
+            <h2>قائمة الخدمات والأسعار</h2>
+            <p>جميع الأسعار شاملة ضريبة القيمة المضافة 🌸</p>
+        </div>
+
+        <!-- Menu Tabs -->
+        <div class="menu-tabs">
+            <button class="tab-btn active" onclick="openCategory(event, 'pedicure')">البدكير والمانيكير</button>
+            <button class="tab-btn" onclick="openCategory(event, 'spa')">السبا والمساج</button>
+            <button class="tab-btn" onclick="openCategory(event, 'skin')">تنظيف البشرة</button>
+            <button class="tab-btn" onclick="openCategory(event, 'haircut')">القص</button>
+            <button class="tab-btn" onclick="openCategory(event, 'haircolor')">صبغات الشعر</button>
+            <button class="tab-btn" onclick="openCategory(event, 'cleaning')">التنظيفات والواكس</button>
+            <button class="tab-btn" onclick="openCategory(event, 'protein')">البروتين ومعالجة الشعر</button>
+            <button class="tab-btn" onclick="openCategory(event, 'makeup')">الميك أب</button>
+            <button class="tab-btn" onclick="openCategory(event, 'hairstyles')">تصفيف الشعر</button>
+            <button class="tab-btn" onclick="openCategory(event, 'princess')">الأميرة الصغيرة</button>
+        </div>
+
+        <!-- Category: Pedicure -->
+        <div id="pedicure" class="tab-content active">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>بدكير يد كلاسيك</h4></div><div class="price-tag">80 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>بدكير رجل كلاسيك</h4></div><div class="price-tag">80 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>بدكير سبا يد</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>بدكير سبا رجل</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>جل اكريلك يد</h4></div><div class="price-tag">345 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>جل اكريلك القدم</h4></div><div class="price-tag">345 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>سوفت جل</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>بولي جل</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>إزالة الجل</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>إصلاح ظفر مكسور</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>شمع البرافين</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تركيب أظافر</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>منكير فرنسي</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رسم الأظافر</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>منكير لون</h4></div><div class="price-tag">15 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>أدوات بدكير لليد والرجل</h4></div><div class="price-tag">46 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>برد الأظافر</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+            </div>
+        </div>
+
+        <!-- Category: Spa -->
+        <div id="spa" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>حمام عادي</h4></div><div class="price-tag">172 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>حمام الملكي</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>حمام الأحجار الساخنة</h4></div><div class="price-tag">195 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>مساج الكاسات الهوائية</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>مساج استرخائي 45 دقيقة</h4></div><div class="price-tag">184 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>مساج الأخشاب</h4></div><div class="price-tag">195 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>صدرية وشورت</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ليفة</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+            </div>
+        </div>
+
+        <!-- Category: Skin -->
+        <div id="skin" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>تنظيف بشرة العادي</h4></div><div class="price-tag">172 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تنظيف بشرة العميق</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قناع الذهب</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قناع الطين</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قناع الفحم</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+            </div>
+        </div>
+
+        <!-- Category: Hair Cut -->
+        <div id="haircut" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>قص اطراف الغرة</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قص أطراف</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قص غرة تدريج</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قص شعر قصير</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قص شعر وسط</h4></div><div class="price-tag">80 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قص شعر مكينة</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+            </div>
+            <p style="text-align: center; color: #777; font-size: 0.85rem; margin-top: 15px;">* السعر يبدأ حسب طول الشعر ونوعه</p>
+        </div>
+
+        <!-- Category: Hair Colors -->
+        <div id="haircolor" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>بلياج</h4></div><div class="price-tag">575 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>هايلايت</h4></div><div class="price-tag">460 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>كونتور</h4></div><div class="price-tag">345 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>لون واحد شعر قصير</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>صبغة جذور</h4></div><div class="price-tag">172 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رينساج</h4></div><div class="price-tag">149 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تست خصلة هايلايت</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+            </div>
+            <p style="text-align: center; color: #777; font-size: 0.85rem; margin-top: 15px;">* الأسعار تعتمد وتختلف حسب طول الشعر بكافة الصبغات</p>
+        </div>
+
+        <!-- Category: Cleanings -->
+        <div id="cleaning" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>واكس الجسم كامل</h4></div><div class="price-tag">345 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>حلاوة جسم كامل</h4></div><div class="price-tag">345 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس رجل كاملة</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس يد كاملة</h4></div><div class="price-tag">92 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>فتلة الوجه</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>شمع الوجه</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس للكوع / الركبة</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>حلاوة للكوع / الركبة</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس ظهر</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تشقير حواجب</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>صبغة حواجب</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس رقبة</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>فتلة / واكس شنب</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+            </div>
+        </div>
+
+        <!-- Category: Protein -->
+        <div id="protein" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>بروتين شعر قصير</h4><p>يبدأ السعر من</p></div><div class="price-tag">575 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>معالج الكافيار</h4></div><div class="price-tag">460 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ماسك ترميم</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ديتوكس</h4></div><div class="price-tag">149 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>حمام زيت</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+            </div>
+            <p style="text-align: center; color: #777; font-size: 0.85rem; margin-top: 15px;">* يبدأ السعر حسب طول وكثافة الشعر</p>
+        </div>
+
+        <!-- Category: Makeup -->
+        <div id="makeup" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>ميك أب مميز</h4></div><div class="price-tag">300 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ميك أب سهرة</h4></div><div class="price-tag">200 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رفع الحواجب</h4></div><div class="price-tag">172 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ميك أب ناعم</h4></div><div class="price-tag">150 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تأسيس الجسم</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رموش بيوتي زون</h4></div><div class="price-tag">46 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رسمة لاينر</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تأسيس حواجب</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رموشك الخاطة</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+            </div>
+        </div>
+
+        <!-- Category: Hair Styles -->
+        <div id="hairstyles" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>تساريح الشعر</h4><p>تبدأ من</p></div><div class="price-tag">172 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تركيب اكستنشن</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>استشوار الشعر</h4><p>يبدأ من</p></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>سيراميك</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>غسيل الشعر</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تغطية فراغات الشعر</h4></div><div class="price-tag">11 <span>ر.س</span></div></div>
+            </div>
+            <p style="text-align: center; color: #777; font-size: 0.85rem; margin-top: 15px;">* يحدد السعر النهائي بدقة حسب طول وكثافة الشعر</p>
+        </div>
+
+        <!-- Category: Little Princess -->
+        <div id="princess" class="tab-content">
+            <div class="price-grid">
+                <div class="price-card"><div class="price-info"><h4>تسريحة للأميرة الصغيرة</h4></div><div class="price-tag">149 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ويفي</h4></div><div class="price-tag">149 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ميك أب ناعم</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ترميم للشعر</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>استشوار</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>بدكير رجل</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>بدكير يد</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تركيب أظافر</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ماسك للشعر</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>منكير فرنسي</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ماسك لليد</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>قناع للوجه</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رسمة لاينر</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>منكير لون</h4></div><div class="price-tag">11 <span>ر.س</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brides Packages Section -->
+    <section class="section-padding" id="brides" style="background-color: var(--card-beige);">
+        <div class="section-title">
+            <h2>✨ بكجات العرايس الملكية ✨</h2>
+            <p>تألقي بأجمل إطلالة في ليلة العمر</p>
+        </div>
+
+        <div class="bride-grid">
+            <!-- Package 1 -->
+            <div class="bride-card">
+                <div class="bride-header">
+                    <h3>البكج الأول</h3>
+                    <div class="bride-price">1150 <span>ر.س</span></div>
+                </div>
+                <ul class="bride-list">
+                    <li><i class="fas fa-check-circle"></i> ميكب مميز</li>
+                    <li><i class="fas fa-check-circle"></i> تسريحة مميزة</li>
+                    <li><i class="fas fa-check-circle"></i> تركيب التاج</li>
+                    <li><i class="fas fa-check-circle"></i> تركيب أظافر</li>
+                    <li><i class="fas fa-check-circle"></i> تأسيس جسم</li>
+                    <li><i class="fas fa-check-circle"></i> منكير لون</li>
+                </ul>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="bride-card" style="border-width: 3px;">
+                <div class="bride-header">
+                    <h3>البكج الثاني</h3>
+                    <div class="bride-price">1725 <span>ر.س</span></div>
+                </div>
+                <ul class="bride-list">
+                    <li><i class="fas fa-check-circle"></i> ميكب مميز + تركيب رموش</li>
+                    <li><i class="fas fa-check-circle"></i> تسريحة مميزة + تركيب التاج والطرحة</li>
+                    <li><i class="fas fa-check-circle"></i> صبغة شعر</li>
+                    <li><i class="fas fa-check-circle"></i> تشقير</li>
+                    <li><i class="fas fa-check-circle"></i> تركيب أظافر</li>
+                    <li><i class="fas fa-check-circle"></i> تأسيس جسم + تعطير الجسم</li>
+                </ul>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="bride-card">
+                <div class="bride-header">
+                    <h3>البكج الثالث الشامل</h3>
+                    <div class="bride-price">2300 <span>ر.س</span></div>
+                </div>
+                <ul class="bride-list">
+                    <li><i class="fas fa-check-circle"></i> ميكب مميز + رموش</li>
+                    <li><i class="fas fa-check-circle"></i> تسريحة مميزة + التاج والطرحة</li>
+                    <li><i class="fas fa-check-circle"></i> بدكير يد ورجل كامل</li>
+                    <li><i class="fas fa-check-circle"></i> صبغة حواجب + تشقير حواجب</li>
+                    <li><i class="fas fa-check-circle"></i> واكس وجه</li>
+                    <li><i class="fas fa-check-circle"></i> تأسيس الجسم + تعطير الجسم</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Pedicure Gallery Section -->
+    <section class="section-padding" id="gallery">
+        <div class="section-title">
+            <h2>معرض أعمال البدكير والمانيكير 💅</h2>
+            <p>أدوات معقمة خاصة بالصالون وأرقى خيارات الأظافر بلمسة Beauty Zone</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80" alt="أدوات بدكير صالون منطقة الجمال">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80" alt="خيارات وأشكال الأظافر - لوزي وكوفن ومربع">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=500&q=80" alt="عناية أظافر صالون منطقة الجمال">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="خدمات المانيكير بالصالون">
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Form Section -->
+    <section class="section-padding" id="booking" style="background-color: var(--card-beige);">
+        <div class="section-title">
+            <h2>للتواصل وطلب الخدمة</h2>
+            <p>قومي بتعبئة التفاصيل وسيتم توجيهك إلى الواتساب فوراً لتأكيد طلبكِ</p>
+        </div>
+
+        <div class="booking-container">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>الاسم الكامل</label>
+                    <input type="text" id="clientName" class="form-control" placeholder="أدخلي اسمكِ هنا" required>
+                </div>
+
+                <div class="form-group">
+                    <label>رقم التواصل (الواتساب)</label>
+                    <input type="tel" id="clientPhone" class="form-control" placeholder="05xxxxxxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label>اختاري الخدمة أو البكج المطلوب</label>
+                    <select id="serviceSelect" class="form-control" required>
+                        <option value="">-- اضغطي لاختيار الخدمة --</option>
+                        <optgroup label="✨ بكجات العرايس">
+                            <option value="بكج العروس الأول (1150 ر.س)">بكج العروس الأول (1150 ر.س)</option>
+                            <option value="بكج العروس الثاني (1725 ر.س)">بكج العروس الثاني (1725 ر.س)</option>
+                            <option value="بكج العروس الثالث (2300 ر.س)">بكج العروس الثالث (2300 ر.س)</option>
+                        </optgroup>
+                        <optgroup label="💅 خدمات أخرى">
+                            <option value="بدكير ومانيكير واكريليك">بدكير ومانيكير واكريليك</option>
+                            <option value="خدمات السبا والمساج">خدمات السبا والمساج</option>
+                            <option value="عناية وتنظيف بشرة">عناية وتنظيف بشرة</option>
+                            <option value="قص وتصفيف الشعر">قص وتصفيف الشعر</option>
+                            <option value="صبغات وبلياج">صبغات وبلياج</option>
+                            <option value="بروتين ومعالجة شعر">بروتين ومعالجة شعر</option>
+                            <option value="مكياج احترافي وسهرة">مكياج احترافي وسهرة</option>
+                            <option value="خدمات التنظيف والواكس">خدمات التنظيف والواكس</option>
+                            <option value="خدمات الأميرة الصغيرة">خدمات الأميرة الصغيرة</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>التاريخ المناسب</label>
+                        <input type="date" id="bookingDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الوقت المناسب</label>
+                        <input type="time" id="bookingTime" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ملاحظات إضافية (اختياري)</label>
+                    <textarea id="bookingNotes" class="form-control" rows="3" placeholder="أي تفاصيل أخرى أو استفسار ترغبين بإضافته..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> إرسال الطلب عبر الواتساب
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section class="section-padding" id="location">
+        <div class="contact-card">
+            <div class="contact-info">
+                <h3>تفضلي بزيارة صالوننا</h3>
+                <p style="color: #555; margin-bottom: 15px;">يسعدنا استقبالكِ وتقديم أفضل تجربة عناية بالجمال.</p>
+                <a href="https://maps.app.goo.gl/FtDy2GXhgdoUxfrD9?g_st=ic" target="_blank" class="btn-location">
+                    <i class="fas fa-map-marker-alt"></i> فتح الموقع على خرائط Google
+                </a>
+            </div>
+            <div class="contact-details">
+                <p><i class="fas fa-phone" style="margin-left: 8px; color: var(--autumn-orange);"></i> 9188 900 53 966+</p>
+                <p style="margin-top: 8px;"><i class="fab fa-instagram" style="margin-left: 8px; color: var(--autumn-orange);"></i> beauty_zo0ne@</p>
+                <p style="margin-top: 8px;"><i class="fab fa-tiktok" style="margin-left: 8px; color: var(--autumn-orange);"></i> beauty_zo0ne@</p>
+                <p style="margin-top: 8px;"><i class="fab fa-snapchat" style="margin-left: 8px; color: var(--autumn-orange);"></i> beauty_zo0ne</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="font-size: 1.3rem;">صالون منطقة الجمال | Beauty Zone</h3>
+        <p style="color: #999; font-size: 0.9rem; margin-top: 5px;">جميع الحقوق محفوظة &copy; 2026</p>
+        
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/beauty_zo0ne?psln=M3YybDRrYzdlcW15&utm_source=qr" target="_blank" class="social-circle-item"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@beauty_zo0ne?_r=1&_t=ZS-9B6Q64Ap00C" target="_blank" class="social-circle-item"><i class="fab fa-tiktok"></i></a>
+            <a href="https://snapchat.com/t/YSso1C4g" target="_blank" class="social-circle-item"><i class="fab fa-snapchat"></i></a>
+            <a href="https://wa.me/966539009188" target="_blank" class="social-circle-item"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://maps.app.goo.gl/FtDy2GXhgdoUxfrD9?g_st=ic" target="_blank" class="social-circle-item"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript code -->
+    <script>
+        function openCategory(evt, categoryName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(categoryName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const salonPhoneNumber = "966539009188";
+
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const service = document.getElementById('serviceSelect').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const notes = document.getElementById('bookingNotes').value || 'لا يوجد';
+
+            const message = `✨ *طلب خدمة جديد - صالون منطقة الجمال* ✨\n\n` +
+                            `👤 *اسم العميلة:* ${name}\n` +
+                            `📱 *رقم التواصل:* ${phone}\n` +
+                            `💅 *الخدمة/البكج المطلوب:* ${service}\n` +
+                            `📅 *التاريخ:* ${date}\n` +
+                            `⏰ *الوقت:* ${time}\n` +
+                            `📝 *ملاحظات إضافية:* ${notes}\n\n` +
+                            `يرجى تأكيد الطلب والتفاصيل وشكراً 🌸`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${salonPhoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
