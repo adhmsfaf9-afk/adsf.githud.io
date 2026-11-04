@@ -249,6 +249,49 @@
             margin-top: 8px;
         }
 
+        /* Working Hours Section */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .hours-card {
+            background-color: #FFFFFF;
+            border: 2px solid var(--autumn-orange);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 20px var(--autumn-glow);
+            transition: var(--transition);
+        }
+
+        .hours-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(217, 119, 54, 0.35);
+        }
+
+        .hours-card i {
+            font-size: 2rem;
+            color: var(--autumn-orange);
+            margin-bottom: 12px;
+        }
+
+        .hours-card h4 {
+            font-size: 1.2rem;
+            color: var(--black-pure);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .hours-card p {
+            font-size: 1.05rem;
+            color: #444;
+            font-weight: 600;
+        }
+
         /* Price List Section */
         .menu-tabs {
             display: flex;
@@ -590,7 +633,7 @@
 
         <nav>
             <a href="#services-prices">الخدمات والأسعار</a>
-            <a href="#brides">بكجات العرايس</a>
+            <a href="#brides">قسم العرايس</a>
             <a href="#gallery">الأعمال الحصرية</a>
             <a href="#booking">طلب الخدمة</a>
             <a href="#location">الموقع</a>
@@ -615,6 +658,26 @@
         </div>
         <div class="hero-image-wrapper">
             <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Beauty Zone Salon" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Working Hours Section -->
+    <section class="section-padding" style="background-color: var(--card-beige); padding-bottom: 20px;">
+        <div class="section-title" style="margin-bottom: 25px;">
+            <h2>أوقات العمل</h2>
+            <p>يسعدنا استقبالكم طوال أيام الأسبوع 🌸</p>
+        </div>
+        <div class="hours-grid">
+            <div class="hours-card">
+                <i class="far fa-clock"></i>
+                <h4>أيام الأسبوع</h4>
+                <p>من 3:10 عصراً إلى 10:00 مساءً</p>
+            </div>
+            <div class="hours-card">
+                <i class="fas fa-business-time"></i>
+                <h4>الويكند</h4>
+                <p>من 2:10 ظهراً إلى 10:00 مساءً</p>
+            </div>
         </div>
     </section>
 
@@ -655,8 +718,10 @@
                 <div class="price-card"><div class="price-info"><h4>شمع البرافين</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>تركيب أظافر</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>منكير فرنسي</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>رسم الأظافر</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>منكير لون</h4></div><div class="price-tag">15 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رسم الأظافر (ديزاين أظافر)</h4></div><div class="price-tag">80 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>لون جل يد</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>لون جل رجل</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>لون مناكير يد</h4></div><div class="price-tag">15 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>أدوات بدكير لليد والرجل</h4></div><div class="price-tag">46 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>برد الأظافر</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
             </div>
@@ -720,14 +785,15 @@
                 <div class="price-card"><div class="price-info"><h4>واكس الجسم كامل</h4></div><div class="price-tag">345 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>حلاوة جسم كامل</h4></div><div class="price-tag">345 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>واكس رجل كاملة</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>واكس يد كاملة</h4></div><div class="price-tag">92 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس يد كاملة</h4></div><div class="price-tag">115 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>فتلة الوجه</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>شمع الوجه</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>واكس للكوع / الركبة</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس للكوع</h4></div><div class="price-tag">70 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>واكس للركبة</h4></div><div class="price-tag">70 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>حلاوة للكوع / الركبة</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>واكس ظهر</h4></div><div class="price-tag">69 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>تشقير حواجب</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>صبغة حواجب</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تشقير حواجب</h4></div><div class="price-tag">35 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>صبغة حواجب</h4></div><div class="price-tag">35 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>واكس رقبة</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>فتلة / واكس شنب</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
             </div>
@@ -739,7 +805,7 @@
                 <div class="price-card"><div class="price-info"><h4>بروتين شعر قصير</h4><p>يبدأ السعر من</p></div><div class="price-tag">575 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>معالج الكافيار</h4></div><div class="price-tag">460 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>ماسك ترميم</h4></div><div class="price-tag">230 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>ديتوكس</h4></div><div class="price-tag">149 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ديتوكس</h4></div><div class="price-tag">150 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>حمام زيت</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
             </div>
             <p style="text-align: center; color: #777; font-size: 0.85rem; margin-top: 15px;">* يبدأ السعر حسب طول وكثافة الشعر</p>
@@ -751,12 +817,12 @@
                 <div class="price-card"><div class="price-info"><h4>ميك أب مميز</h4></div><div class="price-tag">300 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>ميك أب سهرة</h4></div><div class="price-tag">200 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>رفع الحواجب</h4></div><div class="price-tag">172 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>ميك أب ناعم</h4></div><div class="price-tag">150 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>ميك أب ناعم</h4></div><div class="price-tag">170 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>تأسيس الجسم</h4></div><div class="price-tag">57 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>رموش بيوتي زون</h4></div><div class="price-tag">46 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>رموش بيوتي زون</h4></div><div class="price-tag">50 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>رسمة لاينر</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
                 <div class="price-card"><div class="price-info"><h4>تأسيس حواجب</h4></div><div class="price-tag">34 <span>ر.س</span></div></div>
-                <div class="price-card"><div class="price-info"><h4>رموشك الخاطة</h4></div><div class="price-tag">23 <span>ر.س</span></div></div>
+                <div class="price-card"><div class="price-info"><h4>تركيب رموشك</h4></div><div class="price-tag">25 <span>ر.س</span></div></div>
             </div>
         </div>
 
@@ -797,7 +863,7 @@
     <!-- Brides Packages Section -->
     <section class="section-padding" id="brides" style="background-color: var(--card-beige);">
         <div class="section-title">
-            <h2>✨ بكجات العرايس الملكية ✨</h2>
+            <h2>قسم العرايس</h2>
             <p>تألقي بأجمل إطلالة في ليلة العمر</p>
         </div>
 
@@ -852,26 +918,18 @@
         </div>
     </section>
 
-    <!-- Dedicated Pedicure Gallery Section -->
+    <!-- Gallery Section -->
     <section class="section-padding" id="gallery">
         <div class="section-title">
-            <h2>معرض أعمال البدكير والمانيكير 💅</h2>
-            <p>أدوات معقمة خاصة بالصالون وأرقى خيارات الأظافر بلمسة Beauty Zone</p>
+            <h2>معرض أعمالنا الحصرية 🌸</h2>
+            <p>لقطات حقيقية من إبداعات صالون منطقة الجمال</p>
         </div>
 
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80" alt="أدوات بدكير صالون منطقة الجمال">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80" alt="خيارات وأشكال الأظافر - لوزي وكوفن ومربع">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=500&q=80" alt="عناية أظافر صالون منطقة الجمال">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="خدمات المانيكير بالصالون">
-            </div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
         </div>
     </section>
 
