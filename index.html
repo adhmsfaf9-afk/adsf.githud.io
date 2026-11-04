@@ -435,6 +435,18 @@
         }
 
         /* Gallery Section */
+        .gallery-group-title {
+            font-size: 1.4rem;
+            color: var(--autumn-orange);
+            border-bottom: 2px solid var(--accent-beige);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -918,18 +930,59 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section Organized into Categories -->
     <section class="section-padding" id="gallery">
         <div class="section-title">
             <h2>معرض أعمالنا الحصرية 🌸</h2>
-            <p>لقطات حقيقية من إبداعات صالون منطقة الجمال</p>
+            <p>لمسات الفخامة والأناقة في صالون منطقة الجمال</p>
         </div>
 
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="أعمال صالون منطقة الجمال"></div>
+        <!-- 👑 المجموعة الأولى: قسم العرايس -->
+        <div>
+            <h3 class="gallery-group-title">
+                <i class="fas fa-crown"></i> قسم العرايس والمكياج الملكي
+            </h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80" alt="عروس منطقة الجمال"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=500&q=80" alt="إطلالة عروس ملائكية"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="تاج وعروس منطقة الجمال"></div>
+            </div>
+        </div>
+
+        <!-- 💅 المجموعة الثانية: قسم البدكير والمانيكير والأظافر -->
+        <div>
+            <h3 class="gallery-group-title">
+                <i class="fas fa-hand-sparkles"></i> قسم البدكير والمانيكير والأظافر
+            </h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80" alt="أظافر اكريليك"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=500&q=80" alt="فرنش مانيكير ناعم"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80" alt="عين القط مانيكير"></div>
+            </div>
+        </div>
+
+        <!-- ✨ المجموعة الثالثة: قسم المكياج والعيون الاحترافي -->
+        <div>
+            <h3 class="gallery-group-title">
+                <i class="fas fa-magic"></i> قسم المكياج والعيون الاحترافي
+            </h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=500&q=80" alt="مكياج سهرة احترافي"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=500&q=80" alt="سحبة عين وآيلاينر"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="مكياج ناعم ورسم حواجب"></div>
+            </div>
+        </div>
+
+        <!-- 💇‍♀️ المجموعة الرابعة: قسم التسريحات وتصفيف الشعر -->
+        <div>
+            <h3 class="gallery-group-title">
+                <i class="fas fa-cut"></i> قسم التسريحات وتصفيف الشعر
+            </h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=500&q=80" alt="تصفيف شعر ويفي مموج"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=500&q=80" alt="تسريحة ويفي فاخرة"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="تسريحة ذيل حصان أنيقة"></div>
+            </div>
         </div>
     </section>
 
