@@ -434,137 +434,133 @@
             color: var(--autumn-orange);
         }
 
-        /* Square Category Cards Grid */
-        .category-grid {
+        /* 4 Main Category Cards Grid */
+        .categories-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
+            margin-bottom: 40px;
         }
 
-        .category-card {
-            position: relative;
+        .cat-box {
+            background-color: #FFFFFF;
             border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 1 / 1;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 2px solid var(--accent-beige);
+            padding: 25px 20px;
+            text-align: center;
             cursor: pointer;
-            border: 3px solid #FFFFFF;
             transition: var(--transition);
-        }
-
-        .category-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--autumn-orange);
-            box-shadow: 0 12px 30px var(--autumn-glow);
-        }
-
-        .category-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .category-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .category-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 25px;
-            color: #FFFFFF;
-            text-align: right;
-        }
-
-        .category-overlay h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-
-        .category-overlay p {
-            font-size: 0.9rem;
-            color: var(--autumn-light);
-            display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 12px;
         }
 
-        /* Modal Gallery Popup */
-        .modal-gallery {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background-color: rgba(0,0,0,0.85);
-            backdrop-filter: blur(10px);
-            padding: 40px 5%;
-            overflow-y: auto;
-            animation: fadeIn 0.3s ease;
+        .cat-box:hover, .cat-box.active-cat {
+            border-color: var(--autumn-orange);
+            background-color: var(--autumn-light);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px var(--autumn-glow);
         }
 
-        .modal-gallery.active {
-            display: block;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto 30px auto;
-            color: #FFFFFF;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 15px;
-        }
-
-        .modal-header h2 {
-            font-size: 1.8rem;
+        .cat-box i {
+            font-size: 2.5rem;
             color: var(--autumn-orange);
         }
 
-        .close-modal {
-            background: var(--autumn-orange);
+        .cat-box h3 {
+            font-size: 1.3rem;
+            color: var(--black-pure);
+            font-weight: 800;
+        }
+
+        .cat-box span {
+            font-size: 0.85rem;
+            color: var(--autumn-orange);
+            background: #FFFFFF;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            border: 1px solid var(--autumn-orange);
+        }
+
+        /* Gallery Photos Container (Hidden by default until clicked) */
+        .gallery-photos-wrapper {
+            display: none;
+            background-color: #FFFFFF;
+            border-radius: 24px;
+            padding: 30px;
+            border: 2px solid var(--autumn-orange);
+            box-shadow: 0 10px 30px var(--autumn-glow);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .gallery-photos-wrapper.show {
+            display: block;
+        }
+
+        .gallery-photos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed var(--accent-beige);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .gallery-photos-header h3 {
+            font-size: 1.5rem;
+            color: var(--autumn-orange);
+            font-weight: 800;
+        }
+
+        .btn-close-gallery {
+            background-color: var(--black-pure);
             color: #FFFFFF;
             border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.3rem;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
         }
 
-        .close-modal:hover {
-            transform: scale(1.1);
-            background: #FFFFFF;
-            color: var(--black-pure);
+        .btn-close-gallery:hover {
+            background-color: var(--autumn-orange);
         }
 
-        .modal-grid {
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
         }
 
-        .modal-grid-item {
-            height: 280px;
+        .gallery-item {
+            position: relative;
             border-radius: 16px;
             overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.15);
+            height: 280px;
+            border: 2px solid var(--autumn-light);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: var(--transition);
         }
 
-        .modal-grid-item img {
+        .gallery-item:hover {
+            border-color: var(--autumn-orange);
+            transform: translateY(-4px);
+        }
+
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
         }
 
         /* Request Form Section */
@@ -734,7 +730,7 @@
         <nav>
             <a href="#services-prices">الخدمات والأسعار</a>
             <a href="#brides">قسم العرايس</a>
-            <a href="#gallery">الأعمال الحصرية</a>
+            <a href="#gallery">معرض الأعمال</a>
             <a href="#booking">طلب الخدمة</a>
             <a href="#location">الموقع</a>
         </nav>
@@ -1018,156 +1014,146 @@
         </div>
     </section>
 
-    <!-- Interactive Gallery Categories Section (Square Cards) -->
+    <!-- 4 Main Gallery Category Cards (No Vertical Image Walls!) -->
     <section class="section-padding" id="gallery">
         <div class="section-title">
             <h2>معرض أعمالنا الحصرية 🌸</h2>
-            <p>اضغطي على القسم لاستعراض الأعمال والصور الخاصة به</p>
+            <p>اضغطي على أي قسم أدناه لعرض الصور الخاصة به</p>
         </div>
 
-        <div class="category-grid">
-            <!-- 👑 1. Brides Category -->
-            <div class="category-card" onclick="openGalleryModal('brides-modal')">
-                <img src="https://i.ibb.co/5xkZ8MY5/image.jpg" alt="قسم العرايس">
-                <div class="category-overlay">
-                    <h3>👑 قسم العرايس</h3>
-                    <p><i class="fas fa-images"></i> استعراض 5 صور عرايس</p>
-                </div>
+        <!-- 4 Clean Square Box Buttons -->
+        <div class="categories-container">
+            <div class="cat-box" id="btn-brides" onclick="toggleGalleryCategory('brides-photos', 'btn-brides')">
+                <i class="fas fa-crown"></i>
+                <h3>قسم العرايس</h3>
+                <span>اضغطي لعرض الصور 👑</span>
             </div>
 
-            <!-- 💅 2. Nails Category -->
-            <div class="category-card" onclick="openGalleryModal('nails-modal')">
-                <img src="https://i.ibb.co/zTDPkNML/image.jpg" alt="قسم الأظافر والبدكير">
-                <div class="category-overlay">
-                    <h3>💅 البدكير والأظافر</h3>
-                    <p><i class="fas fa-images"></i> استعراض 26 صورة للأظافر</p>
-                </div>
+            <div class="cat-box" id="btn-nails" onclick="toggleGalleryCategory('nails-photos', 'btn-nails')">
+                <i class="fas fa-hand-sparkles"></i>
+                <h3>البدكير والأظافر</h3>
+                <span>اضغطي لعرض الصور 💅</span>
             </div>
 
-            <!-- ✨ 3. Makeup Category -->
-            <div class="category-card" onclick="openGalleryModal('makeup-modal')">
-                <img src="https://i.ibb.co/KxzKb9mW/image.jpg" alt="قسم المكياج والعيون">
-                <div class="category-overlay">
-                    <h3>✨ المكياج والعيون</h3>
-                    <p><i class="fas fa-images"></i> استعراض 20 صورة مكياج</p>
-                </div>
+            <div class="cat-box" id="btn-makeup" onclick="toggleGalleryCategory('makeup-photos', 'btn-makeup')">
+                <i class="fas fa-magic"></i>
+                <h3>المكياج والعيون</h3>
+                <span>اضغطي لعرض الصور ✨</span>
             </div>
 
-            <!-- 💇‍♀️ 4. Hair Category -->
-            <div class="category-card" onclick="openGalleryModal('hair-modal')">
-                <img src="https://i.ibb.co/Y4NFGYXw/image.jpg" alt="قسم تصفيف الشعر">
-                <div class="category-overlay">
-                    <h3>💇‍♀️ التسريحات والشعر</h3>
-                    <p><i class="fas fa-images"></i> استعراض 13 صورة تسريحات</p>
-                </div>
+            <div class="cat-box" id="btn-hair" onclick="toggleGalleryCategory('hair-photos', 'btn-hair')">
+                <i class="fas fa-cut"></i>
+                <h3>التسريحات والشعر</h3>
+                <span>اضغطي لعرض الصور 💇‍♀️</span>
+            </div>
+        </div>
+
+        <!-- Hidden Photos Containers (Opened on Button Click) -->
+
+        <!-- 👑 1. Brides Photos -->
+        <div id="brides-photos" class="gallery-photos-wrapper">
+            <div class="gallery-photos-header">
+                <h3>👑 معرض صور قسم العرايس والمكياج الملكي</h3>
+                <button class="btn-close-gallery" onclick="closeAllGalleries()">إغلاق ✕</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.ibb.co/5xkZ8MY5/image.jpg" alt="إطلالة عروس"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/xKqPpxzy/image.jpg" alt="تاج وعروس"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/fVtHkh4L/image.jpg" alt="تجهيز عروس"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/SY3qNwv/image.jpg" alt="تسريحة عروس"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/1YWHztFx/image.jpg" alt="إطلالة ملكية"></div>
+            </div>
+        </div>
+
+        <!-- 💅 2. Nails Photos -->
+        <div id="nails-photos" class="gallery-photos-wrapper">
+            <div class="gallery-photos-header">
+                <h3>💅 معرض صور قسم البدكير والمانيكير والأظافر</h3>
+                <button class="btn-close-gallery" onclick="closeAllGalleries()">إغلاق ✕</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.ibb.co/zTDPkNML/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/Lmvm0BD/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/9mj7QXLp/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/8HscXCV/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/7xqLZyxT/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/rXYW6wY/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/FjwJ7DH/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/RGF5H8RC/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/6RKhHPcM/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/609Kf2D7/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/8D8NgcB1/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/Z6pcTzXr/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/5WFWSDyY/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/4n6Tp7mf/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/pj225SgJ/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/HpxjqpYK/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/8nvGY7yq/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/GQhHcbG3/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/YYSyc1k/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/XfxNMJMS/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/5hh9Htkk/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/tp9JRJJ9/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/Qvpy8yP8/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/x8PsQWLz/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/Z6Qnz2Dv/image.jpg" alt="أظافر"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/Dfcc7S1N/image.jpg" alt="أظافر"></div>
+            </div>
+        </div>
+
+        <!-- ✨ 3. Makeup Photos -->
+        <div id="makeup-photos" class="gallery-photos-wrapper">
+            <div class="gallery-photos-header">
+                <h3>✨ معرض صور قسم المكياج والعيون الاحترافي</h3>
+                <button class="btn-close-gallery" onclick="closeAllGalleries()">إغلاق ✕</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.ibb.co/KxzKb9mW/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/4g1zC69t/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/JR8z8Fhh/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/XZV6kTnR/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/TB7SPXtz/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/4w8G05CM/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/n8NQz46y/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/NgtCZ5n4/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/tpc7Cg2N/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/1tmSHjNJ/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/YFxwCC3H/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/p6hnRYCr/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/1f4zntbb/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/Mk14dNXz/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/3mBQ7md2/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/s9CPjm3S/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/MxWyjjdK/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/4ZQsxLSt/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/dwm7sGKM/image.jpg" alt="مكياج"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/wrW2QtK8/image.jpg" alt="مكياج"></div>
+            </div>
+        </div>
+
+        <!-- 💇‍♀️ 4. Hair Photos -->
+        <div id="hair-photos" class="gallery-photos-wrapper">
+            <div class="gallery-photos-header">
+                <h3>💇‍♀️ معرض صور قسم التسريحات وتصفيف الشعر</h3>
+                <button class="btn-close-gallery" onclick="closeAllGalleries()">إغلاق ✕</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.ibb.co/Y4NFGYXw/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/chbw6NRG/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/TDdRwfkj/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/mPHd9SH/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/8nGhLnR5/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/Fk1Zb50X/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/jvnvZ3xL/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/4RJ6cQd5/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/CKZsBVKZ/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/5WzzZfw2/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/RkFNpXrt/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/hJ2RHmtw/image.jpg" alt="تسريحة"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co/NddTtvv9/image.jpg" alt="تسريحة"></div>
             </div>
         </div>
     </section>
-
-    <!-- Modals for Photo Galleries -->
-    <!-- Brides Modal -->
-    <div id="brides-modal" class="modal-gallery">
-        <div class="modal-header">
-            <h2>👑 قسم العرايس والمكياج الملكي</h2>
-            <button class="close-modal" onclick="closeGalleryModal('brides-modal')">&times;</button>
-        </div>
-        <div class="modal-grid">
-            <div class="modal-grid-item"><img src="https://i.ibb.co/5xkZ8MY5/image.jpg" alt="عروس"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/xKqPpxzy/image.jpg" alt="عروس"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/fVtHkh4L/image.jpg" alt="عروس"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/SY3qNwv/image.jpg" alt="عروس"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/1YWHztFx/image.jpg" alt="عروس"></div>
-        </div>
-    </div>
-
-    <!-- Nails Modal -->
-    <div id="nails-modal" class="modal-gallery">
-        <div class="modal-header">
-            <h2>💅 قسم البدكير والمانيكير والأظافر</h2>
-            <button class="close-modal" onclick="closeGalleryModal('nails-modal')">&times;</button>
-        </div>
-        <div class="modal-grid">
-            <div class="modal-grid-item"><img src="https://i.ibb.co/zTDPkNML/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Lmvm0BD/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/9mj7QXLp/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/8HscXCV/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/7xqLZyxT/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/rXYW6wY/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/FjwJ7DH/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/RGF5H8RC/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/6RKhHPcM/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/609Kf2D7/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/8D8NgcB1/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Z6pcTzXr/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/5WFWSDyY/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/4n6Tp7mf/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/pj225SgJ/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/HpxjqpYK/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/8nvGY7yq/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/GQhHcbG3/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/YYSyc1k/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/XfxNMJMS/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/5hh9Htkk/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/tp9JRJJ9/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Qvpy8yP8/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/x8PsQWLz/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Z6Qnz2Dv/image.jpg" alt="أظافر"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Dfcc7S1N/image.jpg" alt="أظافر"></div>
-        </div>
-    </div>
-
-    <!-- Makeup Modal -->
-    <div id="makeup-modal" class="modal-gallery">
-        <div class="modal-header">
-            <h2>✨ قسم المكياج والعيون الاحترافي</h2>
-            <button class="close-modal" onclick="closeGalleryModal('makeup-modal')">&times;</button>
-        </div>
-        <div class="modal-grid">
-            <div class="modal-grid-item"><img src="https://i.ibb.co/KxzKb9mW/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/4g1zC69t/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/JR8z8Fhh/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/XZV6kTnR/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/TB7SPXtz/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/4w8G05CM/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/n8NQz46y/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/NgtCZ5n4/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/tpc7Cg2N/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/1tmSHjNJ/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/YFxwCC3H/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/p6hnRYCr/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/1f4zntbb/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Mk14dNXz/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/3mBQ7md2/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/s9CPjm3S/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/MxWyjjdK/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/4ZQsxLSt/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/dwm7sGKM/image.jpg" alt="مكياج"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/wrW2QtK8/image.jpg" alt="مكياج"></div>
-        </div>
-    </div>
-
-    <!-- Hair Modal -->
-    <div id="hair-modal" class="modal-gallery">
-        <div class="modal-header">
-            <h2>💇‍♀️ قسم التسريحات وتصفيف الشعر</h2>
-            <button class="close-modal" onclick="closeGalleryModal('hair-modal')">&times;</button>
-        </div>
-        <div class="modal-grid">
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Y4NFGYXw/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/chbw6NRG/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/TDdRwfkj/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/mPHd9SH/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/8nGhLnR5/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/Fk1Zb50X/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/jvnvZ3xL/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/4RJ6cQd5/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/CKZsBVKZ/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/5WzzZfw2/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/RkFNpXrt/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/hJ2RHmtw/image.jpg" alt="تسريحة"></div>
-            <div class="modal-grid-item"><img src="https://i.ibb.co/NddTtvv9/image.jpg" alt="تسريحة"></div>
-        </div>
-    </div>
 
     <!-- Request Form Section -->
     <section class="section-padding" id="booking" style="background-color: var(--card-beige);">
@@ -1283,14 +1269,39 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openGalleryModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-            document.body.style.overflow = 'hidden';
+        function toggleGalleryCategory(wrapperId, btnId) {
+            var wrappers = document.getElementsByClassName("gallery-photos-wrapper");
+            var buttons = document.getElementsByClassName("cat-box");
+            
+            // Check if clicked gallery is already shown
+            var targetWrapper = document.getElementById(wrapperId);
+            var isAlreadyShow = targetWrapper.classList.contains("show");
+
+            // Hide all
+            for (var i = 0; i < wrappers.length; i++) {
+                wrappers[i].classList.remove("show");
+            }
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove("active-cat");
+            }
+
+            // Toggle active state
+            if (!isAlreadyShow) {
+                targetWrapper.classList.add("show");
+                document.getElementById(btnId).classList.add("active-cat");
+                targetWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         }
 
-        function closeGalleryModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-            document.body.style.overflow = 'auto';
+        function closeAllGalleries() {
+            var wrappers = document.getElementsByClassName("gallery-photos-wrapper");
+            var buttons = document.getElementsByClassName("cat-box");
+            for (var i = 0; i < wrappers.length; i++) {
+                wrappers[i].classList.remove("show");
+            }
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove("active-cat");
+            }
         }
 
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
